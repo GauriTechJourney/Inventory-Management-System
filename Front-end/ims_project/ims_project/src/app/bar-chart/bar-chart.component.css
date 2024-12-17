@@ -1,0 +1,157 @@
+/* Center the chart content in the middle of the page */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to bottom right, #a8edea, #fed6e3); /* Vibrant gradient background */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Clean and modern font */
+}
+
+/* Chart container styling */
+ngx-charts-bar-vertical-2d {
+  display: block;
+  margin: 0 auto;
+  width: 80%; /* Responsive width */
+  max-width: 900px; /* Limit max width */
+  height: 450px;
+  background: #ffffff;
+  border-radius: 15px; /* Softer corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Strong shadow for depth */
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ngx-charts-bar-vertical-2d:hover {
+  transform: translateY(-8px); /* Subtle lift on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Chart legend styling */
+.ngx-charts-legend {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.ngx-charts-legend-item {
+  margin: 0 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.ngx-charts-legend-item:hover {
+  background-color: #e0e0e0;
+}
+
+/* Axis label styling */
+.axis-label {
+  font-size: 16px;
+  font-weight: bold;
+  fill: #222; /* Stronger text for better readability */
+}
+
+/* X-axis labels styling */
+.x-axis text {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #444; /* Darker for better contrast */
+  transition: fill 0.3s ease;
+}
+
+.x-axis text:hover {
+  fill: #20c997; /* Highlight color on hover */
+}
+
+/* Y-axis labels styling */
+.y-axis text {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #444;
+  transition: fill 0.3s ease;
+}
+
+.y-axis text:hover {
+  fill: #20c997; /* Highlight color on hover */
+}
+
+/* Bars styling */
+.ngx-charts .bar {
+  rx: 10px; /* Rounded corners */
+  ry: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease, fill 0.3s ease;
+}
+
+/* Interactive hover effect on bars */
+.ngx-charts .bar:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+/* Custom colors for bars */
+.ngx-charts .bar:nth-child(1) {
+  fill: #025ec2; /* Dark sky blue */
+}
+
+.ngx-charts .bar:nth-child(2) {
+  fill: #5dade2; /* Medium sky blue */
+}
+
+.ngx-charts .bar:nth-child(3) {
+  fill: #b2c6d3; /* Light sky blue */
+}
+
+/* Gridline styling */
+.ngx-charts .gridline {
+  stroke: #e0e0e0; /* Light gray grid lines */
+  stroke-dasharray: 4; /* Dotted grid lines */
+  stroke-width: 0.5;
+}
+
+/* Tooltip styling */
+.ngx-tooltip {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #333;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.ngx-tooltip:hover {
+  opacity: 1; /* Tooltip becomes fully visible on hover */
+}
+
+/* Customize the chart gridlines for a clean, modern design */
+.ngx-charts .gridline {
+  stroke: #dcdcdc;
+  stroke-width: 0.8;
+}
+
+/* Bar chart container when loading */
+ngx-charts-bar-vertical-2d .ngx-charts-bar-vertical {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Fade-in animation for bars */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
